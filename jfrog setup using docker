@@ -22,9 +22,16 @@ WORKDIR /opt/artifactory-oss-6.9.6
 RUN chmod +x bin/artifactory.sh
 EXPOSE 8081
 CMD ["bin/artifactory.sh", "run"]
+------------------------------------------------------------------------------------------
 docker build -t jfrog .
 docker run -itd --name jfrog -p 8081:8081 jfrog
 ---------------------------------------------------------------------------------------------------------
+docker pusing in docker hub:-
+docker images
+docker login
+docker tag jfrog:latest vijaydurgaprasadk/jfrog:latest
+docker push vijaydurgaprasadk/jfrog:latest
+-------------------------------------------------------------------------------------------------------------
 Docker_installations:--
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
